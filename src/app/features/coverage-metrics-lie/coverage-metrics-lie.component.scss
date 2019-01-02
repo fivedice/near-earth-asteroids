@@ -1,0 +1,14 @@
+.item {
+  height: 2em;
+  width: 10em;
+  border-radius: 6px;
+  text-align: center;
+  padding-top: .7em;
+  cursor: pointer;
+  border: solid 1px black;
+  border-bottom: none;
+
+  &:last-of-type {
+    border-bottom: solid 1px black;
+  }
+}

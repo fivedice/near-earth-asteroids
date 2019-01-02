@@ -1,0 +1,11 @@
+<div *ngIf="hasData(); else nodata">
+  <div *ngFor="let item of data"
+       class="item"
+       (click)="delete(item)">
+    {{ item }}
+  </div>
+</div>
+
+<ng-template #nodata>
+  No data
+</ng-template>
