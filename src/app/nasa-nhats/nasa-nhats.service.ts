@@ -11,7 +11,7 @@ export class NasaNhatsService {
 
   constructor(private http: HttpClient) { }
 
-  getNearEarthObjects(): Observable<NearEarthObject[]> {
+  getAllNearEarthObjects(): Observable<NearEarthObject[]> {
     const neoUrl = 'https://ssd-api.jpl.nasa.gov/nhats.api';
     return this.http.get<NearEarthObjectResponse>(neoUrl)
       .pipe(
