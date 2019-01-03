@@ -1,6 +1,7 @@
-import { Component, OnInit, ChangeDetectionStrategy, OnDestroy } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy, OnDestroy, Output, EventEmitter } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { takeWhile } from 'rxjs/operators';
+import { NasaNhatsRequest } from 'src/app/nasa-nhats/nasa-nhats-request';
 
 @Component({
   selector: 'nea-filter',
@@ -9,6 +10,9 @@ import { takeWhile } from 'rxjs/operators';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class FilterComponent implements OnInit, OnDestroy {
+  @Output()
+  filterValueChange = new EventEmitter<NasaNhatsRequest>();
+
   form: FormGroup;
 
   readonly deltaVOptions = [4, 5, 6, 7, 8, 9, 10, 11, 12];
@@ -18,32 +22,31 @@ export class FilterComponent implements OnInit, OnDestroy {
   readonly magnitudeOptions = [16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30];
   readonly orbitConditionCodeOptions = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
   private destroyed = false;
+  private readonly request: NasaNhatsRequest = {
+    deltaV: 12,
+    tripDays: 360,
+    launchWindow: '2015-2040',
+    stayDays: 8,
+    magnitude: 26,
+    orbitConditionCode: 7
+  };
 
-  constructor(private formBuilder: FormBuilder) {
-    this.form = formBuilder.group({
-      deltaV: 12,
-      tripDays: 360,
-      launchWindow: '2015-2040',
-      stayDays: 8,
-      magnitude: 26,
-      orbitConditionCode: 7
-    });
+  constructor(formBuilder: FormBuilder) {
+    this.form = formBuilder.group(this.request);
   }
 
   ngOnInit() {
+    this.filterValueChange.emit(this.request);
     this.form.valueChanges
-      .pipe(
-        takeWhile(() => !this.destroyed)
-      ).subscribe(
-        (formValue) => this.onFormValueChange(formValue)
-      );
+      .pipe(takeWhile(() => !this.destroyed))
+      .subscribe(formValue => this.filterValueChange.emit(formValue));
   }
 
   ngOnDestroy() {
     this.destroyed = true;
   }
 
-  private onFormValueChange(formValue: any): void {
+  private onFormValueChange(formValue: NasaNhatsRequest): void {
     throw new Error('Method not implemented.');
   }
 
