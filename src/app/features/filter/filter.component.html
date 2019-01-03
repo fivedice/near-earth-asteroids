@@ -1,12 +1,77 @@
 <form [formGroup]="form">
-  <div class="form-group">
-    <label for="deltaV">delta-V</label>
+  <div class="form-group"
+       title="This total delta-V includes the maneuver required to depart a notional 400 km altitude circular Earth parking orbit, the delta-V required to match the NEA's velocity at arrival, the delta-V required to depart the NEA, and the delta-V (if any) required to control atmospheric entry speed at Earth return.">
+    <label for="deltaV">Total delta-V in km/s</label>
     <select #deltaV
             name="deltaV"
             formControlName="deltaV"
             class="form-control">
-      <option *ngFor="let v of deltaVs" [value]="v">
-        {{ v }}
+      <option *ngFor="let v of deltaVOptions" [value]="v">
+        &lt;= {{ v }} kp/s
+      </option>
+    </select>
+  </div>
+
+  <div class="form-group"
+       title="The total mission duration includes the outbound flight time from Earth to the NEA, the stay time at the NEA, and the inbound flight time from the NEA back to Earth.">
+    <label for="tripDays">Total mission duration in days</label>
+    <select #tripDays
+            name="tripDays"
+            formControlName="tripDays"
+            class="form-control">
+      <option *ngFor="let days of tripDayOptions" [value]="days">
+        &lt;= {{ days }} days
+      </option>
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label for="stayDays">Time spent at the NEA</label>
+    <select #stayDays
+            name="stayDays"
+            formControlName="stayDays"
+            class="form-control">
+      <option *ngFor="let days of stayDaysOptions" [value]="days">
+        &lt;= {{ days }} days
+      </option>
+    </select>
+  </div>
+
+  <div class="form-group"
+       title="Launch window constraint defined as starting year to ending year, where the ending year includes the last day of that year (e.g., 2015-2020 is from 2015-01-01 to 2020-12-31).">
+    <label for="launchWindow">Launch Window</label>
+    <select #launchWindow
+            name="launchWindow"
+            formControlName="launchWindow"
+            class="form-control">
+      <option *ngFor="let window of launchWindowOptions" [value]="window">
+        {{ window }}
+      </option>
+    </select>
+  </div>
+
+  <div class="form-group"
+       title="Absolute visual (V-band) magnitude in magnitude units.">
+    <label for="magnitude">Visual Magnitude</label>
+    <select #magnitude
+            name="magnitude"
+            formControlName="magnitude"
+            class="form-control">
+      <option *ngFor="let h of magnitudeOptions" [value]="h">
+        &lt;= {{ h }}
+      </option>
+    </select>
+  </div>
+
+  <div class="form-group"
+       title="Orbit Condition Code of the NEA's orbit when NHATS-analysis was performed, where 0 implies a well-determined orbit and 9 implies a very poorly-determined (highly uncertain) orbit.">
+    <label for="orbitConditionCode">Orbit Condition Code</label>
+    <select #orbitConditionCode
+            name="orbitConditionCode"
+            formControlName="orbitConditionCode"
+            class="form-control">
+      <option *ngFor="let code of orbitConditionCodeOptions" [value]="code">
+        &lt;= {{ code }}
       </option>
     </select>
   </div>
