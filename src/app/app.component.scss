@@ -1,24 +1,17 @@
-:host {
-  height: 100vh;
-  width: 97vw;
-  margin: 20px;
-  display: grid;
-  grid-gap: 1em;
-  grid-template-columns: auto;
-  grid-template-rows: 32px auto;
-  grid-template-areas:
-    'header'
-    'content';
-  justify-items: stretch;
-  align-content: stretch;
-}
-
 .header {
-  grid-area: 'header';
+  grid-area: header;
   font-size: 24px;
   font-weight: bold;
 }
 
-.content {
-  grid-area: 'content';
+.filter {
+  grid-area: filter;
+}
+
+.list {
+  grid-area: list;
+}
+
+.details {
+  grid-area: details;
 }
