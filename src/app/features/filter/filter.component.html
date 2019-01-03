@@ -1,3 +1,13 @@
-<p>
-  filter works!
-</p>
+<form [formGroup]="form">
+  <div class="form-group">
+    <label for="deltaV">delta-V</label>
+    <select #deltaV
+            name="deltaV"
+            formControlName="deltaV"
+            class="form-control">
+      <option *ngFor="let v of deltaVs" [value]="v">
+        {{ v }}
+      </option>
+    </select>
+  </div>
+</form>

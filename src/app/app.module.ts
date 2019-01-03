@@ -8,6 +8,7 @@ import { ListFilterComponent } from './features/list-filter/list-filter.componen
 import { FilterComponent } from './features/filter/filter.component';
 import { ListComponent } from './features/list/list.component';
 import { SelectableDirective } from './features/common/selectable.directive';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { SelectableDirective } from './features/common/selectable.directive';
   imports: [
     BrowserModule,
     HttpClientModule,
+    ReactiveFormsModule,
     AppRoutingModule
   ],
   providers: [],
