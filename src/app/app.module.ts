@@ -10,6 +10,7 @@ import { ListComponent } from './features/list/list.component';
 import { SelectableDirective } from './features/common/selectable.directive';
 import { ReactiveFormsModule } from '@angular/forms';
 import { LoaderComponent } from './features/common/loader/loader.component';
+import { DetailsComponent } from './features/details/details.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { LoaderComponent } from './features/common/loader/loader.component';
     FilterComponent,
     ListComponent,
     SelectableDirective,
-    LoaderComponent
+    LoaderComponent,
+    DetailsComponent
   ],
   imports: [
     BrowserModule,

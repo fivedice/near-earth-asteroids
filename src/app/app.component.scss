@@ -11,3 +11,14 @@
 .details {
   grid-area: details;
 }
+
+.footer {
+  grid-area: footer;
+  background-image: url(/assets/cneos-banner.png);
+  background-size: contain;
+  background-position-y: 2em;
+  background-repeat: no-repeat;
+  span {
+    float: right;
+  }
+}
