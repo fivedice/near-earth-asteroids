@@ -1,4 +1,4 @@
-import { Component, ChangeDetectionStrategy, Input } from '@angular/core';
+import { Component, ChangeDetectionStrategy, Input, Output, EventEmitter } from '@angular/core';
 import { NearEarthObject } from 'src/app/nasa-nhats/near-earth-object';
 
 @Component({
@@ -11,5 +11,8 @@ export class DetailsComponent {
 
   @Input()
   neo: NearEarthObject;
+
+  @Output()
+  advancedButtonClick = new EventEmitter<any>();
 
 }

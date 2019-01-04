@@ -4,12 +4,8 @@
   font-weight: bold;
 }
 
-.list {
-  grid-area: list;
-}
-
-.details {
-  grid-area: details;
+router-outlet {
+  display: contents;
 }
 
 .footer {

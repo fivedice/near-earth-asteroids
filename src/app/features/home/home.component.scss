@@ -1,0 +1,17 @@
+:host {
+  /*
+   * Ignore this smart-component wrapper, allowing us to position dumb child components
+   * in the global CSS Grid layout!
+   * Not supported in IE or Edge at all!
+   * https: //caniuse.com/#search=display%3A%20contents
+   */
+  display: contents;
+}
+
+.list {
+  grid-area: list;
+}
+
+.details {
+  grid-area: details;
+}

@@ -13,6 +13,8 @@ import { LoaderComponent } from './features/common/loader/loader.component';
 import { DetailsComponent } from './features/details/details.component';
 import { ObjectDetailsComponent } from './features/object-details/object-details.component';
 import { ObservationDetailsComponent } from './features/observation-details/observation-details.component';
+import { HomeComponent } from './features/home/home.component';
+import { AdvancedMissionDetailsComponent } from './features/advanced-mission-details/advanced-mission-details.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +27,9 @@ import { ObservationDetailsComponent } from './features/observation-details/obse
     LoaderComponent,
     DetailsComponent,
     ObjectDetailsComponent,
-    ObservationDetailsComponent
+    ObservationDetailsComponent,
+    HomeComponent,
+    AdvancedMissionDetailsComponent
   ],
   imports: [
     BrowserModule,
