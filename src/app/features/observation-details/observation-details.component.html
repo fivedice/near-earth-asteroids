@@ -1,0 +1,24 @@
+<div class="table">
+  <header>Next Observability Opportunities</header>
+  <div class="datum">
+    <span class="label">Optical:</span>
+    <span class="value">
+      {{neo?.obs_start}}
+      <span *ngIf="neo && neo.obs_mag"> [{{neo?.obs_mag}}]</span>
+    </span>
+  </div>
+  <div class="datum">
+    <span class="label">Radar (Arecibo):</span>
+    <span class="value">
+      {{neo?.radar_obs_a}}
+      <span *ngIf="neo && neo.radar_snr_a"> [{{neo?.radar_snr_a}}]</span>
+    </span>
+  </div>
+  <div class="datum">
+    <span class="label">Radar (Goldstone):</span>
+    <span class="value">
+      {{neo?.radar_obs_g}}
+      <span *ngIf="neo && neo.radar_snr_g"> [{{neo?.radar_snr_g}}]</span>
+    </span>
+  </div>
+</div>

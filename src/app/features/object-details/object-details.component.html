@@ -1,0 +1,27 @@
+<div class='table'>
+  <header>Object Properties</header>
+  <div class="datum">
+    <span class="label">Object:</span>
+    <span class="value">{{neo?.fullname}}</span>
+  </div>
+  <div class="datum">
+    <span class="label">Visual Magnitude (H):</span>
+    <span class="value">
+      {{neo?.h}}
+    </span>
+  </div>
+  <div class="datum">
+    <span class="label">Est. Diameter:</span>
+    <span class="value">
+      <span *ngIf="neo">{{neo?.min_size}}-{{neo?.max_size}}m</span>
+    </span>
+  </div>
+  <div class="datum">
+    <span class="label">Orbit Id:</span>
+    <span class="value">{{neo?.orbit_id}}</span>
+  </div>
+  <div class="datum">
+    <span class="label">Orbit Condition Code:</span>
+    <span class="value">{{neo?.occ}}</span>
+  </div>
+</div>

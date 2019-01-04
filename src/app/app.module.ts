@@ -11,6 +11,8 @@ import { SelectableDirective } from './features/common/selectable.directive';
 import { ReactiveFormsModule } from '@angular/forms';
 import { LoaderComponent } from './features/common/loader/loader.component';
 import { DetailsComponent } from './features/details/details.component';
+import { ObjectDetailsComponent } from './features/object-details/object-details.component';
+import { ObservationDetailsComponent } from './features/observation-details/observation-details.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,9 @@ import { DetailsComponent } from './features/details/details.component';
     ListComponent,
     SelectableDirective,
     LoaderComponent,
-    DetailsComponent
+    DetailsComponent,
+    ObjectDetailsComponent,
+    ObservationDetailsComponent
   ],
   imports: [
     BrowserModule,

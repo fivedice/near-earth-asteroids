@@ -22,6 +22,7 @@ export class ListFilterComponent {
 
   onFilterChange(filter: NasaNhatsRequest) {
     this.loading = true;
+    this.selectionChange.emit(undefined);
     this.changeDetector.markForCheck();
     this.nasaNhatsService
       .getFilteredNearEarthObjects(filter)
