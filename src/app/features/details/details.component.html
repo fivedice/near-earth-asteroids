@@ -5,7 +5,10 @@
 
   <nea-observation-details [neo]="neo"></nea-observation-details>
 
-  <button type="button" class="btn btn-primary" (click)="advancedButtonClick.emit(true)">
+  <button type="button"
+          class="btn btn-primary"
+          (click)="advancedButtonClick.emit(true)"
+          [disabled]="!neo">
     Advanced...
   </button>
 </div>
