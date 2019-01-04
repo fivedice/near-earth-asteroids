@@ -1,2 +1,7 @@
-<nea-filter></nea-filter>
-<nea-list></nea-list>
+<nea-filter (filterValueChange)="onFilterChange($event)"></nea-filter>
+
+<nea-list [listItems]="neos"
+          [itemIdAccessor]="getNeoId"
+          [itemNameAccessor]="getNeoName"
+          [loading]="loading">
+</nea-list>

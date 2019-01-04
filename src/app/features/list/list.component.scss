@@ -1,7 +1,11 @@
 ul {
+  height: 500px;
+  max-height: 500px;
   border: solid 1px #ced4da;
   border-radius: 4px;
-  height: 100%;
-  width: 100%;
-  overflow: scroll;
+  overflow-y: auto;
+}
+
+li {
+  cursor: pointer;
 }

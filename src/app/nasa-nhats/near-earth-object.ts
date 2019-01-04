@@ -1,3 +1,5 @@
+import { ListItem } from '../features/list/list-item.interface';
+
 export interface Signature {
   source: string;
   version: string;
@@ -13,7 +15,7 @@ export interface MinDur {
   dur: string;
 }
 
-export interface NearEarthObject {
+export interface NearEarthObject extends ListItem {
   min_size: string;
   occ: string;
   n_via_traj: string;

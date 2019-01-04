@@ -1,4 +1,6 @@
+<h5>Matching NEAs ({{ listItems?.length }})</h5>
 <ul class="list-group">
+  <nea-loader [loading]="loading"></nea-loader>
   <li *ngFor="let item of listItems"
       class="list-group-item"
       (click)="toggleSelection(item)"
