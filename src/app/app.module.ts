@@ -14,6 +14,9 @@ import { ObjectDetailsComponent } from './features/object-details/object-details
 import { ObservationDetailsComponent } from './features/observation-details/observation-details.component';
 import { HomeComponent } from './features/home/home.component';
 import { AdvancedMissionDetailsComponent } from './features/advanced-mission-details/advanced-mission-details.component';
+import { MissionTrajectoriesComponent } from './features/mission-trajectories/mission-trajectories.component';
+import { DeltaVChartComponent } from './features/delta-v-chart/delta-v-chart.component';
+import { MissionConstraintsComponent } from './features/mission-constraints/mission-constraints.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +30,10 @@ import { AdvancedMissionDetailsComponent } from './features/advanced-mission-det
     ObjectDetailsComponent,
     ObservationDetailsComponent,
     HomeComponent,
-    AdvancedMissionDetailsComponent
+    AdvancedMissionDetailsComponent,
+    MissionTrajectoriesComponent,
+    DeltaVChartComponent,
+    MissionConstraintsComponent
   ],
   imports: [
     BrowserModule,

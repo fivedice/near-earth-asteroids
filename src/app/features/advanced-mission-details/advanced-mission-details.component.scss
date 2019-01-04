@@ -1,0 +1,32 @@
+:host {
+  grid-area: content;
+  display: grid;
+  grid-gap: 2em;
+  grid-template-columns: repeat(6 1fr);
+  grid-template-rows: 1fr 2fr;
+  grid-template-areas:
+    'topleft    topleft    topmiddle  topmiddle   topright    topright'
+    'bottomleft bottomleft bottomleft bottomright bottomright bottomright';
+}
+
+nea-object-details {
+  grid-area: topleft;
+}
+
+nea-observation-details {
+  grid-area: topmiddle;
+}
+
+nea-mission-constraints {
+  grid-area: topright;
+}
+
+nea-mission-trajectories {
+  grid-area: bottomleft;
+  justify-self: center;
+}
+
+nea-delta-v-chart {
+  grid-area: bottomright;
+  justify-self: center;
+}
