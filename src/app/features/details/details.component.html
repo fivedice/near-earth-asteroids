@@ -1,4 +1,56 @@
 <h5>Mission Details</h5>
-<div>
-  Name: {{neo?.fullname}}
+
+<div class="contents">
+  <div class='table'>
+    <header>Object Properties</header>
+    <div class="datum">
+      <span class="label">Object:</span>
+      <span class="value">{{neo?.fullname}}</span>
+    </div>
+    <div class="datum">
+      <span class="label">Visual Magnitude (H):</span>
+      <span class="value">
+        {{neo?.h}}
+      </span>
+    </div>
+    <div class="datum">
+      <span class="label">Est. Diameter:</span>
+      <span class="value">
+        <span *ngIf="neo">{{neo?.min_size}}-{{neo?.max_size}}m</span>
+      </span>
+    </div>
+    <div class="datum">
+      <span class="label">Orbit Id:</span>
+      <span class="value">{{neo?.orbit_id}}</span>
+    </div>
+    <div class="datum">
+      <span class="label">Orbit Condition Code:</span>
+      <span class="value">{{neo?.occ}}</span>
+    </div>
+  </div>
+
+  <div class="table">
+    <header>Next Observability Opportunities</header>
+    <div class="datum">
+      <span class="label">Optical:</span>
+      <span class="value">
+        {{neo?.obs_start}}
+        <span *ngIf="neo && neo.obs_mag"> [{{neo?.obs_mag}}]</span>
+      </span>
+    </div>
+    <div class="datum">
+      <span class="label">Radar (Arecibo):</span>
+      <span class="value">
+        {{neo?.radar_obs_a}}
+        <span *ngIf="neo && neo.radar_snr_a"> [{{neo?.radar_snr_a}}]</span>
+      </span>
+    </div>
+    <div class="datum">
+      <span class="label">Radar (Goldstone):</span>
+      <span class="value">
+        {{neo?.radar_obs_g}}
+        <span *ngIf="neo && neo.radar_snr_g"> [{{neo?.radar_snr_g}}]</span>
+      </span>
+    </div>
+  </div>
 </div>
