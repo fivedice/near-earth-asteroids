@@ -9,4 +9,10 @@
   flex-direction: column;
   height: 500px;
   max-height: 500px;
+  justify-content: space-between;
+}
+
+button {
+  width: 50%;
+  align-self: center;
 }
