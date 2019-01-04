@@ -42,6 +42,15 @@ export class HomeComponent {
     this.changeDetector.markForCheck();
   }
 
+  onAdvancedButtonClick() {
+    // I don't want to re-query NASA every time I want this data,
+    // so I'm not passing id's in the router and querying.
+    // I'm just gonna store the state in local storage and then I can retrieve it
+    // if we're refreshing the advanced page.
+    localStorage.setItem('near-earth-asteroids', JSON.stringify(Array.from(this.stateService.state.entries())));
+    this.router.navigate(['advanced']);
+  }
+
   getNeoId(neo: NearEarthObject): string | number {
     return neo.des;
   }

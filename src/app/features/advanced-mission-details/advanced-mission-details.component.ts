@@ -22,6 +22,14 @@ export class AdvancedMissionDetailsComponent implements OnInit {
   ngOnInit() {
     this.neo = this.stateService.state.get('neo');
     this.request = this.stateService.state.get('nasaNhatsRequest');
+    // If we're refreshing the advanced page then we don't have the right state.
+    // Load it up from localStorage.
+    if (!this.neo || !this.request) {
+      this.stateService.state = new Map(JSON.parse(localStorage.getItem('near-earth-asteroids')));
+      this.neo = this.stateService.state.get('neo');
+      this.request = this.stateService.state.get('nasaNhatsRequest');
+    }
+
     if (!this.neo || !this.request) {
       this.router.navigate(['']);
     }
