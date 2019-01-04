@@ -45,9 +45,4 @@ export class FilterComponent implements OnInit, OnDestroy {
   ngOnDestroy() {
     this.destroyed = true;
   }
-
-  private onFormValueChange(formValue: NasaNhatsRequest): void {
-    throw new Error('Method not implemented.');
-  }
-
 }
