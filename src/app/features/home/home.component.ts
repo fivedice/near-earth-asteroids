@@ -14,6 +14,7 @@ export class HomeComponent {
   neo: NearEarthObject;
   neos: NearEarthObject[];
   loading = false;
+  currentFilter: NasaNhatsRequest;
 
   constructor(private router: Router,
               private nasaNhatsService: NasaNhatsService,
@@ -21,6 +22,7 @@ export class HomeComponent {
 
   onFilterChange(filter: NasaNhatsRequest) {
     this.loading = true;
+    this.currentFilter = filter;
     this.changeDetector.markForCheck();
     this.nasaNhatsService
       .getFilteredNearEarthObjects(filter)
