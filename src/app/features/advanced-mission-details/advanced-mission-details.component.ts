@@ -1,8 +1,8 @@
-import { Component, OnInit, ChangeDetectionStrategy, OnDestroy, ChangeDetectorRef } from '@angular/core';
-import { ActivatedRoute, Data } from '@angular/router';
-import { takeWhile } from 'rxjs/operators';
+import { Component, OnInit, ChangeDetectionStrategy, ChangeDetectorRef } from '@angular/core';
 import { NearEarthObject } from 'src/app/nasa-nhats/near-earth-object';
 import { NasaNhatsRequest } from 'src/app/nasa-nhats/nasa-nhats-request';
+import { StateService } from 'src/app/state/state.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'nea-advanced-mission-details',
@@ -10,28 +10,21 @@ import { NasaNhatsRequest } from 'src/app/nasa-nhats/nasa-nhats-request';
   styleUrls: ['./advanced-mission-details.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class AdvancedMissionDetailsComponent implements OnInit, OnDestroy {
-
-  destroyed = false;
+export class AdvancedMissionDetailsComponent implements OnInit {
 
   neo: NearEarthObject;
-  filter: NasaNhatsRequest;
+  request: NasaNhatsRequest;
 
-  constructor(private route: ActivatedRoute,
+  constructor(private router: Router,
+              private stateService: StateService,
               private changeDetector: ChangeDetectorRef) { }
 
   ngOnInit() {
-    this.route.data
-      .pipe(takeWhile(() => !this.destroyed))
-      .subscribe((data: Data) => {
-        this.neo = data.neo;
-        this.filter = data.filter;
-        this.changeDetector.markForCheck();
-      });
+    this.neo = this.stateService.state.get('neo');
+    this.request = this.stateService.state.get('nasaNhatsRequest');
+    if (!this.neo || !this.request) {
+      this.router.navigate(['']);
+    }
+    this.changeDetector.markForCheck();
   }
-
-  ngOnDestroy() {
-    this.destroyed = true;
-  }
-
 }

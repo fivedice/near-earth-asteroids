@@ -4,9 +4,9 @@
           [itemIdAccessor]="getNeoId"
           [itemNameAccessor]="getNeoName"
           [loading]="loading"
-          (selectionChange)="neo = $event">
+          (selectionChange)="onSelectionChange($event)">
 </nea-list>
 
 <nea-details [neo]="neo"
-             (advancedButtonClick)="router.navigate(['advanced'], { neo: neo, filter: currentFilter })">
+             (advancedButtonClick)="router.navigate(['advanced'])">
 </nea-details>

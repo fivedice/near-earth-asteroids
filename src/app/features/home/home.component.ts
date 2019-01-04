@@ -3,6 +3,7 @@ import { NearEarthObject } from 'src/app/nasa-nhats/near-earth-object';
 import { Router } from '@angular/router';
 import { NasaNhatsRequest } from 'src/app/nasa-nhats/nasa-nhats-request';
 import { NasaNhatsService } from 'src/app/nasa-nhats/nasa-nhats.service';
+import { StateService } from 'src/app/state/state.service';
 
 @Component({
   selector: 'nea-home',
@@ -14,18 +15,18 @@ export class HomeComponent {
   neo: NearEarthObject;
   neos: NearEarthObject[];
   loading = false;
-  currentFilter: NasaNhatsRequest;
 
   constructor(private router: Router,
               private nasaNhatsService: NasaNhatsService,
+              private stateService: StateService,
               private changeDetector: ChangeDetectorRef) {}
 
-  onFilterChange(filter: NasaNhatsRequest) {
+  onFilterChange(request: NasaNhatsRequest) {
     this.loading = true;
-    this.currentFilter = filter;
+    this.stateService.state.set('nasaNhatsRequest', request);
     this.changeDetector.markForCheck();
     this.nasaNhatsService
-      .getFilteredNearEarthObjects(filter)
+      .getFilteredNearEarthObjects(request)
       .subscribe(
         (result: NearEarthObject[]) => {
           this.neos = result;
@@ -33,6 +34,12 @@ export class HomeComponent {
           this.changeDetector.markForCheck();
         }
       );
+  }
+
+  onSelectionChange(neo: NearEarthObject) {
+    this.neo = neo;
+    this.stateService.state.set('neo', neo);
+    this.changeDetector.markForCheck();
   }
 
   getNeoId(neo: NearEarthObject): string | number {

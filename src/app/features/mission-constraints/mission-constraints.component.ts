@@ -1,4 +1,5 @@
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { Component, ChangeDetectionStrategy, Input } from '@angular/core';
+import { NasaNhatsRequest } from 'src/app/nasa-nhats/nasa-nhats-request';
 
 @Component({
   selector: 'nea-mission-constraints',
@@ -6,11 +7,9 @@ import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
   styleUrls: ['./mission-constraints.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class MissionConstraintsComponent implements OnInit {
+export class MissionConstraintsComponent {
 
-  constructor() { }
-
-  ngOnInit() {
-  }
+  @Input()
+  request: NasaNhatsRequest;
 
 }

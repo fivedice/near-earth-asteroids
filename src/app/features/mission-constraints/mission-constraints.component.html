@@ -1,3 +1,27 @@
-<p>
-  mission-constraints works!
-</p>
+<div class='table'>
+  <header>Mission Constraints</header>
+  <div class="datum">
+    <span class="label">Length of Stay:</span>
+    <span class="value">
+      <span *ngIf="request?.stayDays">{{request?.stayDays}} days</span>
+    </span>
+  </div>
+  <div class="datum">
+    <span class="label">Launch Window:</span>
+    <span class="value">
+      {{request?.launchWindow}}
+    </span>
+  </div>
+  <div class="datum">
+    <span class="label">Total delta-V:</span>
+    <span class="value">
+      <span *ngIf="request">{{request.deltaV}}</span>
+    </span>
+  </div>
+  <div class="datum">
+    <span class="label">Total Duration:</span>
+    <span class="value">
+      <span *ngIf="request?.tripDays">{{request?.tripDays}} days</span>
+    </span>
+  </div>
+</div>
