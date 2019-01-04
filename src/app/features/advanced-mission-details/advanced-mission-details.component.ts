@@ -1,4 +1,7 @@
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy, OnDestroy, ChangeDetectorRef } from '@angular/core';
+import { ActivatedRoute, Data } from '@angular/router';
+import { takeWhile } from 'rxjs/operators';
+import { NearEarthObject } from 'src/app/nasa-nhats/near-earth-object';
 
 @Component({
   selector: 'nea-advanced-mission-details',
@@ -6,11 +9,26 @@ import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
   styleUrls: ['./advanced-mission-details.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class AdvancedMissionDetailsComponent implements OnInit {
+export class AdvancedMissionDetailsComponent implements OnInit, OnDestroy {
 
-  constructor() { }
+  destroyed = false;
+
+  neo: NearEarthObject;
+
+  constructor(private route: ActivatedRoute,
+              private changeDetector: ChangeDetectorRef) { }
 
   ngOnInit() {
+    this.route.data
+      .pipe(takeWhile(() => !this.destroyed))
+      .subscribe((data: Data) => {
+        this.neo = data.neo;
+        this.changeDetector.markForCheck();
+      });
+  }
+
+  ngOnDestroy() {
+    this.destroyed = true;
   }
 
 }

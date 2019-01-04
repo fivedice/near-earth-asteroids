@@ -17,6 +17,6 @@ nea-root {
   grid-template-rows: 32px 1fr 123px;
   grid-template-areas:
     'header header header'
-    'filter list details'
+    'left   middle right'
     'footer footer footer';
 }

@@ -1,5 +1,12 @@
-<nea-list-filter (selectionChange)="neo = $event"></nea-list-filter>
+<nea-filter (filterValueChange)="onFilterChange($event)"></nea-filter>
+
+<nea-list [listItems]="neos"
+          [itemIdAccessor]="getNeoId"
+          [itemNameAccessor]="getNeoName"
+          [loading]="loading"
+          (selectionChange)="neo = $event">
+</nea-list>
 
 <nea-details [neo]="neo"
-             (advancedButtonClick)="router.navigate(['advanced'])">
+             (advancedButtonClick)="router.navigate(['advanced'], { neo: neo })">
 </nea-details>

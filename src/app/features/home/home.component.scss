@@ -8,10 +8,15 @@
   display: contents;
 }
 
-.list {
-  grid-area: list;
+nea-filter {
+  grid-area: left;
 }
 
-.details {
-  grid-area: details;
+nea-list {
+  grid-area: middle;
+  justify-self: stretch;
+}
+
+nea-details {
+  grid-area: right;
 }
