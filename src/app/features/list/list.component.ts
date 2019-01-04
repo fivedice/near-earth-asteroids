@@ -22,7 +22,7 @@ export class ListComponent {
   itemNameAccessor: (item: ListItem) => string;
 
   @Output()
-  selectionChange: EventEmitter<ListItem[]> = new EventEmitter<ListItem[]>();
+  selectionChange = new EventEmitter<ListItem>();
 
   private debouncer;
 
@@ -52,7 +52,7 @@ export class ListComponent {
 
   private onSingleClick() {
     const selected = this.listItems.filter(i => i.selected);
-    this.selectionChange.emit(selected);
+    this.selectionChange.emit(selected.length > 0 ? selected[0] : undefined);
     this.changeDetector.markForCheck();
   }
 }

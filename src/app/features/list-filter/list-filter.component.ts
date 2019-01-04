@@ -1,4 +1,4 @@
-import { Component, ChangeDetectionStrategy, ChangeDetectorRef } from '@angular/core';
+import { Component, ChangeDetectionStrategy, ChangeDetectorRef, EventEmitter, Output } from '@angular/core';
 import { NasaNhatsRequest } from 'src/app/nasa-nhats/nasa-nhats-request';
 import { NasaNhatsService } from 'src/app/nasa-nhats/nasa-nhats.service';
 import { NearEarthObject } from 'src/app/nasa-nhats/near-earth-object';
@@ -10,6 +10,8 @@ import { NearEarthObject } from 'src/app/nasa-nhats/near-earth-object';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ListFilterComponent {
+  @Output()
+  selectionChange = new EventEmitter<NearEarthObject>();
 
   neos: NearEarthObject[];
 
@@ -38,5 +40,9 @@ export class ListFilterComponent {
 
   getNeoName(neo: NearEarthObject): string {
     return neo.fullname;
+  }
+
+  onSelectionChange(neo: NearEarthObject) {
+    this.selectionChange.emit(neo);
   }
 }

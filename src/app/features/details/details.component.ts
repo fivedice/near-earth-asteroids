@@ -1,4 +1,5 @@
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { Component, ChangeDetectionStrategy, Input } from '@angular/core';
+import { NearEarthObject } from 'src/app/nasa-nhats/near-earth-object';
 
 @Component({
   selector: 'nea-details',
@@ -6,11 +7,9 @@ import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
   styleUrls: ['./details.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class DetailsComponent implements OnInit {
+export class DetailsComponent {
 
-  constructor() { }
-
-  ngOnInit() {
-  }
+  @Input()
+  neo: NearEarthObject;
 
 }

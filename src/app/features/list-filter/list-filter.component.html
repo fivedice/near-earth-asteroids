@@ -3,5 +3,6 @@
 <nea-list [listItems]="neos"
           [itemIdAccessor]="getNeoId"
           [itemNameAccessor]="getNeoName"
-          [loading]="loading">
+          [loading]="loading"
+          (selectionChange)="onSelectionChange($event)">
 </nea-list>

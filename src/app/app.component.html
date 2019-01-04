@@ -1,8 +1,11 @@
 <div class="header">
   Near Earth Asteroid Mission Planner
 </div>
-<nea-list-filter></nea-list-filter>
-<nea-details></nea-details>
+
+<nea-list-filter (selectionChange)="neo = $event"></nea-list-filter>
+
+<nea-details [neo]="neo"></nea-details>
+
 <div class="footer">
   All data courtesy of:
   <span class="text-muted">This app not affiliated with or endorsed by NASA or its entities in any way.</span>
