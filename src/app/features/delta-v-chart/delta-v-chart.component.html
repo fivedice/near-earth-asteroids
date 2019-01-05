@@ -1,3 +1,14 @@
-<p>
-  delta-v-chart works!
-</p>
+<header>
+  Total Mission delta-V as a Function of<br/>
+  Departure Date and Mission Duration
+</header>
+
+<figure>
+  <img [src]="getPlotImage()">
+  <figcaption>
+    The plot above shows total mission delta-V as a function of Earth departure date and total round-trip flight time
+    (mission duration). It summarizes the many potential mission scenarios by plotting, for each case, the total round-trip
+    delta-V values (color-coded) required for each launch date and round trip flight time considered. Note that these
+    trajectories span a range of possible stay times at the NEA.
+  </figcaption>
+</figure>

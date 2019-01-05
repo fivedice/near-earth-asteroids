@@ -1,3 +1,96 @@
-<p>
-  mission-trajectories works!
-</p>
+<div class='table'>
+  <header>Mission Constraints</header>
+  <div class="datum">
+    <span class="col1">Total Mission delta-V (km/s)</span>
+    <span class="col2">{{neoDetails?.min_dv_traj.dv_total}}</span>
+    <span class="col3">{{neoDetails?.min_dur_traj.dv_total}}</span>
+  </div>
+  <div class="datum">
+    <span class="col1">Total Mission Duration (d)</span>
+    <span class="col2">{{neoDetails?.min_dv_traj.dur_total}}</span>
+    <span class="col3">{{neoDetails?.min_dur_traj.dur_total}}</span>
+  </div>
+  <div class="datum">
+    <span class="col1">Outbound Flight Time (d)</span>
+    <span class="col2">{{neoDetails?.min_dv_traj.dur_out}}</span>
+    <span class="col3">{{neoDetails?.min_dur_traj.dur_out}}</span>
+  </div>
+  <div class="datum">
+    <span class="col1">Stay Time (d)</span>
+    <span class="col2">{{neoDetails?.min_dv_traj.dur_at}}</span>
+    <span class="col3">{{neoDetails?.min_dur_traj.dur_at}}</span>
+  </div>
+  <div class="datum">
+    <span class="col1">Inbound Flight Time (d)</span>
+    <span class="col2">{{neoDetails?.min_dv_traj.dur_ret}}</span>
+    <span class="col3">{{neoDetails?.min_dur_traj.dur_ret}}</span>
+  </div>
+  <div class="datum">
+    <span class="col1">Launch date (YYYY-MM-DD)</span>
+    <span class="col2">{{neoDetails?.min_dv_traj.launch}}</span>
+    <span class="col3">{{neoDetails?.min_dur_traj.launch}}</span>
+  </div>
+  <div class="datum">
+    <span class="col1">C<sub>3</sub> (km<sup>2</sup>/s<sup>2</sup>)</span>
+    <span class="col2">{{neoDetails?.min_dv_traj.c3}}</span>
+    <span class="col3">{{neoDetails?.min_dur_traj.c3}}</span>
+  </div>
+  <div class="datum">
+    <span class="col1">Departure V<sub>infinity</sub> (km/s)</span>
+    <span class="col2">{{neoDetails?.min_dv_traj.v_dep_earth}}</span>
+    <span class="col3">{{neoDetails?.min_dur_traj.v_dep_earth}}</span>
+  </div>
+  <div class="datum">
+    <span class="col1">Earth Departure dV (km/s)</span>
+    <span class="col2">{{neoDetails?.min_dv_traj.dv_dep_park}}</span>
+    <span class="col3">{{neoDetails?.min_dur_traj.dv_dep_park}}</span>
+  </div>
+  <div class="datum">
+    <span class="col1">dV to Arrive at NEA (km/s)</span>
+    <span class="col2">{{neoDetails?.min_dv_traj.vrel_arr_neo}}</span>
+    <span class="col3">{{neoDetails?.min_dur_traj.vrel_arr_neo}}</span>
+  </div>
+  <div class="datum">
+    <span class="col1">dV to Depart NEA (km/s)</span>
+    <span class="col2">{{neoDetails?.min_dv_traj.vrel_dep_neo}}</span>
+    <span class="col3">{{neoDetails?.min_dur_traj.vrel_dep_neo}}</span>
+  </div>
+  <div class="datum">
+    <span class="col1">Earth return dV (km/s)</span>
+    <span class="col2">{{neoDetails?.min_dv_traj.vrel_arr_earth}}</span>
+    <span class="col3">{{neoDetails?.min_dur_traj.vrel_arr_earth}}</span>
+  </div>
+  <div class="datum">
+    <span class="col1">Entry Speed (km/s)</span>
+    <span class="col2">{{neoDetails?.min_dv_traj.v_arr_earth}}</span>
+    <span class="col3">{{neoDetails?.min_dur_traj.v_arr_earth}}</span>
+  </div>
+  <div class="datum">
+    <span class="col1">Depature Declination (deg)</span>
+    <span class="col2">{{neoDetails?.min_dv_traj.dec_dep}}</span>
+    <span class="col3">{{neoDetails?.min_dur_traj.dec_dep}}</span>
+  </div>
+  <div class="datum">
+    <span class="col1">Return Declination (deg)</span>
+    <span class="col2">{{neoDetails?.min_dv_traj.dec_arr}}</span>
+    <span class="col3">{{neoDetails?.min_dur_traj.dec_arr}}</span>
+  </div>
+  <div class="datum">
+    <span class="col1">NHATS Trajectory Solution Id</span>
+    <span class="col2">{{neoDetails?.min_dv_traj.tid}}</span>
+    <span class="col3">{{neoDetails?.min_dur_traj.tid}}</span>
+  </div>
+  <div class="datum">
+    <span class="col1">Total Mission delta-V (km/s)</span>
+    <span class="col2">{{neoDetails?.min_dv_traj.dv_total}}</span>
+    <span class="col3">{{neoDetails?.min_dur_traj.dv_total}}</span>
+  </div>
+  <div class="datum">
+    <span class="col1">Total Mission delta-V (km/s)</span>
+    <span class="col2">{{neoDetails?.min_dv_traj.dv_total}}</span>
+    <span class="col3">{{neoDetails?.min_dur_traj.dv_total}}</span>
+  </div>
+  <div class="footer">
+    This data was computed on {{neoDetails?.computed}} using the latest available orbital parameters.
+  </div>
+</div>

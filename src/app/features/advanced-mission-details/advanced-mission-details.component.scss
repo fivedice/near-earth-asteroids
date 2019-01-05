@@ -2,8 +2,8 @@
   grid-area: content;
   display: grid;
   grid-gap: 2em;
-  grid-template-columns: repeat(6 1fr);
-  grid-template-rows: 1fr 2fr;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: 1fr 4fr;
   grid-template-areas:
     'topleft    topleft    topmiddle  topmiddle   topright    topright'
     'bottomleft bottomleft bottomleft bottomright bottomright bottomright';
@@ -23,7 +23,6 @@ nea-mission-constraints {
 
 nea-mission-trajectories {
   grid-area: bottomleft;
-  justify-self: center;
 }
 
 nea-delta-v-chart {

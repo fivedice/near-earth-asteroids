@@ -3,6 +3,8 @@ export interface NasaNhatsRequest {
   tripDays: number;
   launchWindow: string;
   stayDays: number;
-  magnitude: number;
-  orbitConditionCode: number;
+  magnitude?: number;
+  orbitConditionCode?: number;
+  designation?: string;
+  plot?: boolean;
 }
