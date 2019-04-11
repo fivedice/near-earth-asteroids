@@ -90,6 +90,10 @@
             "assets": [
               "src/favicon.ico",
               "src/assets"
+            ],
+            "codeCoverageExclude": [
+              "**/*.mock.ts",
+              "**/*.module.ts"
             ]
           }
         },
